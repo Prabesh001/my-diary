@@ -48,3 +48,7 @@ body {
     @apply hidden sm:block cursor-pointer bg-[#0a0c2d] p-2 rounded-full;
   }
 }
+
+.z-imp {
+  z-index: 999 !important;
+}

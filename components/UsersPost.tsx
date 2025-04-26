@@ -11,6 +11,7 @@ import {
 import Popover from "./Popover";
 
 const UsersPost = ({
+  _id,
   username,
   profile,
   time,
@@ -19,7 +20,7 @@ const UsersPost = ({
   image,
 }: UserPostType) => {
   return (
-    <div className="bg-gray-800 rounded p-4">
+    <div className="bg-gray-800 rounded p-4" key={_id}>
       <div>
         <div className="flex justify-between items-center">
           <div className="flex gap-2">

@@ -4,7 +4,7 @@ import React from "react";
 
 const Sidebar = () => {
   return (
-    <div className="h-[calc(100vh-4rem)] transition-all w-0 p-0 sm:p-2 overflow-y-auto sm:w-[230px] bg-[#000319]">
+    <div className="h-screen transition-all w-0 p-0 sm:p-2 overflow-y-auto sm:w-[230px] bg-[#000319]">
       {sidebartop.map(({ Icon, label, redirect }) => (
         <Link
           href={redirect}

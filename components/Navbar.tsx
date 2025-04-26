@@ -8,11 +8,16 @@ import {
 } from "react-icons/fa6";
 import Popover from "./Popover";
 import { ellipsisData } from "@/data/navbarData";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
     <div className="flex z-10 sticky top-0 justify-between items-center p-4 noscroll bg-[#000319]">
-      <div className="logo text-blue-400 text-2xl font-bold select-none cursor-pointer">MyDiary</div>
+      <Link href={"/"}>
+        <div className="logo text-blue-400 text-2xl font-bold select-none cursor-pointer">
+          MyDiary
+        </div>
+      </Link>
       <SearchBar />
       <div className="profile flex text-2xl gap-3 lg:gap-5 items-center">
         <div className="nav-button box-sd">

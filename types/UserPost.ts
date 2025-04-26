@@ -1,9 +1,10 @@
 import { StaticImageData } from "next/image";
 
 export interface UserPostType {
-  username: string;
+  _id: string | number | undefined;
+  username: string | undefined;
   profile?: string;
-  time: string;
+  time: string | undefined;
   emotion?: string;
   description?: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
