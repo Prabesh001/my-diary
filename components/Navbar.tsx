@@ -45,7 +45,9 @@ const Navbar = () => {
           />
         </div>
         <div>
-          <Avatar src={""} alt="Profile" size={40} />
+          <Link href={"/profile"}>
+            <Avatar src={""} alt="Profile" size={40} />
+          </Link>
         </div>
       </div>
     </div>

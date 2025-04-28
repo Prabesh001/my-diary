@@ -1,9 +1,8 @@
 import React from "react";
 import UsersPost from "./UsersPost";
-import posts from "@/data/posts.json";
 import Link from "next/link";
 
-const PostScroller = () => {
+const PostScroller = ({ posts }) => {
   return (
     <div className="mt-2 flex flex-col gap-2">
       {posts.map(
