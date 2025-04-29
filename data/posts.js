@@ -9,7 +9,7 @@ const posts = [
     time: "10/3/2024",
   },
   {
-    _id: 21,
+    _id: 221,
     username: "Christal Dallon",
     profile: "http://dummyimage.com/119x100.png/5fa2dd/ffffff",
     description:

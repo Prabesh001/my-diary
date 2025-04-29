@@ -27,7 +27,7 @@ export const sidebarfav: TypeItem[] = [
   },
   {
     label: "Friends",
-    redirect: "/friends",
+    redirect: "/profile/friends",
     Icon: FaPerson,
   },
   {
