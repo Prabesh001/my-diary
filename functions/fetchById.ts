@@ -1,4 +1,4 @@
-import posts from "@/data/posts.json";
+import posts from "@/data/posts";
 
 export const fetchById = (id: number) => {
   const data = posts.filter((post) => post._id == id);

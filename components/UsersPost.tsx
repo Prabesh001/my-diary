@@ -24,7 +24,7 @@ const UsersPost = ({
       <div>
         <div className="flex justify-between items-center">
           <div className="flex gap-2">
-            <Avatar src={profile} alt={username} />
+            <Avatar src={profile} alt={username || "User"} />
             <div className="flex flex-col">
               <p>
                 <span className="">{username}</span>{" "}
@@ -53,7 +53,7 @@ const UsersPost = ({
         </div>
         <div className="px-2 py-3">
           <p>{description}</p>
-          <div className="w-full aspect-video">
+          <div className="w-full aspect-video mt-1">
             <Image
               src={image}
               alt="Username"

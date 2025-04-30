@@ -1,8 +1,9 @@
 import React from "react";
 import UsersPost from "./UsersPost";
 import Link from "next/link";
+import { UserPostType } from "@/types/UserPost";
 
-const PostScroller = ({ posts }) => {
+const PostScroller: React.FC<{ posts: UserPostType[] }> = ({ posts }) => {
   return (
     <div className="mt-2 flex flex-col gap-2">
       {posts.map(
