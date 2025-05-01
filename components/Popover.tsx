@@ -38,7 +38,7 @@ const Popover: React.FC<PopoverProps> = ({
       </div>
 
       {showPopover && (
-        <div className={`absolute z-50 ${popoverChildClassName}`}>
+        <div className={`absolute z-30 ${popoverChildClassName}`}>
           {childrenContent}
         </div>
       )}

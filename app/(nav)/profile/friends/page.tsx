@@ -28,9 +28,9 @@ const Friends = () => {
             key={index}
             className={`${
               selectedIndex === index
-                ? "bg-blue-600 text-white"
-                : "bg-gray-600 text-gray-200"
-            } px-4 py-2 rounded-lg cursor-pointer`}
+                ? "border-blue-600 bg-blue-600 text-white"
+                : "border-gray-600 text-gray-200"
+            } px-4 py-2 border-2 rounded-lg cursor-pointer`}
             onClick={() => handleSelectIndex(index as 0 | 1 | 2)}
           >
             {option}

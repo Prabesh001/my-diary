@@ -35,7 +35,7 @@ const Login = () => {
       );
       if (response.status === 200) {
         toast.success("Login Successful!");
-        setTimeout(() => router.push("/"), 1000);
+        setTimeout(() => router.push("/"), 500);
       }
     } catch (error: any) {
       toast.error(
@@ -110,7 +110,7 @@ const Login = () => {
                       type="submit"
                       className="inline-flex w-full items-center justify-center space-x-2 rounded-lg border border-blue-700 bg-blue-700 px-6 py-3 font-semibold leading-6 text-white hover:border-blue-600 hover:bg-blue-600 hover:text-white focus:ring focus:ring-blue-400 focus:ring-opacity-50 active:border-blue-700 active:bg-blue-700 dark:focus:ring-blue-400 dark:focus:ring-opacity-90"
                     >
-                      <span>Log In</span>
+                      <span>{loading ? "Loading..." : "Log In"}</span>
                     </button>
                     <div className="my-5 flex items-center">
                       <span

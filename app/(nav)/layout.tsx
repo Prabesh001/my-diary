@@ -3,6 +3,8 @@ import Sidebar from "@/components/Sidebar";
 import { cookies } from "next/headers";
 import jwt from "jsonwebtoken";
 import { redirect } from "next/navigation";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 const layout = async ({
   children,
@@ -15,12 +17,17 @@ const layout = async ({
   const token = cookieStore.get("token")?.value;
 
   try {
-    if (!token) throw new Error("No token found");
+    if (!token) {
+      console.error("Unauthorized: No token provided");
+      return redirect("/login"); 
+    }
+
     jwt.verify(token, JWT_SECRET);
   } catch (err) {
     console.error("Unauthorized:", err);
-    redirect("/login"); 
+    return redirect("/login"); 
   }
+  
   return (
     <div>
       <Navbar />
@@ -30,7 +37,9 @@ const layout = async ({
         </div>
 
         <div className="flex-1 min-w-0">
-          <div className="w-full p-2">{children}</div>
+          <div className="w-full p-2">
+            <Suspense fallback={<Loading />}>{children}</Suspense>
+          </div>
         </div>
       </div>
     </div>

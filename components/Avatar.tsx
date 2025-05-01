@@ -4,7 +4,7 @@ import avatar from "@/public/avatar.jpg";
 
 interface avatar {
   src?: string | StaticImageData;
-  alt: string;
+  alt?: string;
   size?: number;
 }
 
@@ -13,12 +13,17 @@ const Avatar = ({ src, alt, size = 40 }: avatar) => {
     <Image
       style={{
         width: size,
+        height: size,
+        minWidth: size,
+        minHeight: size,
+        maxWidth: size,
+        maxHeight: size,
         aspectRatio: 1,
         borderRadius: "50%",
         objectFit: "cover",
       }}
       src={src || avatar}
-      alt={alt}
+      alt={alt || "Profile"}
       width={size}
       height={size}
     />

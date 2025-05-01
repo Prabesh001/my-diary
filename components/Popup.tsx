@@ -42,11 +42,11 @@ const Popup = ({
     <div
       role="dialog"
       aria-modal="true"
-      className={`fixed inset-0 z-20 flex items-center justify-center backdrop-blur-[1px] bg-black/50 ${overlayClassName}`}
+      className={`fixed inset-0 overflow-hidden h-screen w-screen z-40 flex items-center sm:items-center-safe justify-center backdrop-blur-[1px] bg-black/50 ${overlayClassName}`}
       onClick={closeOnOverlayClick ? onClose : undefined}
     >
       <div
-        className={`relative rounded-md p-6 shadow-lg overflow-hidden ${popupClassName}`}
+        className={`relative rounded-md p-6 shadow-lg overflow-hidden z-50 ${popupClassName}`}
         onClick={(e) => e.stopPropagation()}
       >
         {content}
