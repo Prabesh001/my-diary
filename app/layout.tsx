@@ -3,7 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ToastContainer } from "react-toastify";
 import { Suspense } from "react";
-import Loading from "./(nav)/loading";
+import Loading from "./loading";
+import ThemeProviders from "@/models/ThemeContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,8 +31,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ToastContainer />
-        <Suspense fallback={<Loading />}>{children}</Suspense>
+        <ThemeProviders>
+          <ToastContainer />
+          <Suspense fallback={<Loading />}>{children}</Suspense>
+        </ThemeProviders>
       </body>
     </html>
   );

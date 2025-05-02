@@ -1,8 +1,12 @@
 "use client";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import React from "react";
 
 const error = ({ error }: { error: string }) => {
+  setTimeout(() => {
+    redirect("/");
+  }, 3000);
   return (
     <>
       <div className="bg-gray-100 dark:bg-gray-800 px-2 text-center">

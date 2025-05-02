@@ -4,14 +4,14 @@ import { cookies } from "next/headers";
 import jwt from "jsonwebtoken";
 import { redirect } from "next/navigation";
 import { Suspense } from "react";
-import Loading from "./loading";
+import Loading from "../loading";
 
 const layout = async ({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) => {
-  const JWT_SECRET = process.env.JWT_SECRET || "yoursecret";
+  const JWT_SECRET = process.env.JWT_SECRET as string;
 
   const cookieStore = await cookies();
   const token = cookieStore.get("token")?.value;
@@ -19,15 +19,15 @@ const layout = async ({
   try {
     if (!token) {
       console.error("Unauthorized: No token provided");
-      return redirect("/login"); 
+      return redirect("/login");
     }
 
     jwt.verify(token, JWT_SECRET);
   } catch (err) {
     console.error("Unauthorized:", err);
-    return redirect("/login"); 
+    return redirect("/login");
   }
-  
+
   return (
     <div>
       <Navbar />

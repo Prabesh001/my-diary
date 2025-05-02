@@ -1,7 +1,8 @@
 import Avatar from "@/components/Avatar";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { Suspense } from "react";
+import Loading from "./loading";
 
 const ProfileLayout = ({
   children,
@@ -50,7 +51,7 @@ const ProfileLayout = ({
           </Link>
         </div>
       </div>
-      {children}
+      <Suspense fallback={<Loading />}>{children}</Suspense>
     </div>
   );
 };
